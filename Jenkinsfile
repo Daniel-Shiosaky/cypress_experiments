@@ -19,13 +19,13 @@ pipeline {
       }
     }
 
-    stage('start local server') {
-      steps {
+   // stage('start local server') {
+     // steps {
         // start local server in the background
         // we will shut it down in "post" command block
-        sh 'nohup npm run start:ci &'
-      }
-    }
+     //   sh 'nohup npm run start:ci &'
+     // }
+    //}
 
     // this stage runs end-to-end tests, and each agent uses the workspace
     // from the previous stage
@@ -64,11 +64,11 @@ pipeline {
     }
   }
 
-  post {
+  //post {
     // shutdown the server running in the background
-    always {
-      echo 'Stopping local server'
-      sh 'pkill -f http-server'
-    }
-  }
+   // always {
+     // echo 'Stopping local server'
+     // sh 'pkill -f http-server'
+    //}
+  //}
 }
