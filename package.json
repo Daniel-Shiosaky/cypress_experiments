@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "e2e:record:parallel": "npx cypress run --record --key 7ad51fb0-e790-4aa7-9a61-c7b2a139c5ab --parallel"
+    "e2e:record:parallel": "npx cypress run --record --key 7ad51fb0-e790-4aa7-9a61-c7b2a139c5ab --parallel",
+    "cy:verify":"npx cypress verify"
   },
   "repository": {
     "type": "git",
