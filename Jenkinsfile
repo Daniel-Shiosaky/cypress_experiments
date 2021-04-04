@@ -45,7 +45,7 @@ pipeline {
       parallel {
         // start several test jobs in parallel, and they all
         // will use Cypress Dashboard to load balance any found spec files
-        stage('tester A') {
+        stage('tester 1') {
           steps {
             echo "Running build ${env.BUILD_ID}"
             sh "npm run e2e:record:parallel"
@@ -53,7 +53,28 @@ pipeline {
         }
 
         // second tester runs the same command
-        stage('tester B') {
+        stage('tester 2') {
+          steps {
+            echo "Running build ${env.BUILD_ID}"
+            sh "npm run e2e:record:parallel"
+          }
+        }
+        // second tester runs the same command
+        stage('tester 3') {
+          steps {
+            echo "Running build ${env.BUILD_ID}"
+            sh "npm run e2e:record:parallel"
+          }
+        }
+        // second tester runs the same command
+        stage('tester 4') {
+          steps {
+            echo "Running build ${env.BUILD_ID}"
+            sh "npm run e2e:record:parallel"
+          }
+        }
+        // second tester runs the same command
+        stage('tester 5') {
           steps {
             echo "Running build ${env.BUILD_ID}"
             sh "npm run e2e:record:parallel"
